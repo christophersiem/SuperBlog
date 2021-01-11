@@ -5,8 +5,8 @@ require('dotenv').config()
 
 //express app
 const app = express();
-const username =process.env.USERNAME;
-const password =process.env.PASSWORD;
+const username = process.env.USERNAME;
+const password = process.env.PASSWORD;
 
 // connect to mongodb
 const dbURI =
@@ -25,9 +25,9 @@ app.use(express.static("public"));
 //for accepting form data:
 app.use(express.urlencoded({ extended: true }));
 
-app.get("/api", (req, res) => {
-  res.redirect("/api/blogs");
-});
+// app.get("/api", (req, res) => {
+//   res.redirect("/api/blogs");
+// });
 
 app.get("/api/about", (req, res) => {
   res.render("about", { title: "About" });
