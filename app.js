@@ -26,7 +26,7 @@ app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 
 app.get("/api", (req, res) => {
-  res.redirect("/blogs");
+  res.redirect("/api/blogs");
 });
 
 app.get("/api/about", (req, res) => {
