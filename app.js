@@ -25,15 +25,15 @@ app.use(express.static("public"));
 //for accepting form data:
 app.use(express.urlencoded({ extended: true }));
 
-app.get("/", (req, res) => {
+app.get("/api", (req, res) => {
   res.redirect("/blogs");
 });
 
-app.get("/about", (req, res) => {
+app.get("/api/about", (req, res) => {
   res.render("about", { title: "About" });
 });
 
-app.use("/blogs", blogRoutes);
+app.use("/api/blogs", blogRoutes);
 
 //404 Page - if the code reaches this point, it fires
 app.use((req, res) => {
