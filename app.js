@@ -13,7 +13,7 @@ const dbURI =
   "mongodb+srv://" + username +":" + password + "@cluster0.ucavl.mongodb.net/SuperBlog?retryWrites=true&w=majority";
 mongoose
   .connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then((result) => app.listen(3000))
+  // .then((result) => app.listen(3000))
   .catch((err) => console.log(err));
 
 // register view engine
@@ -39,3 +39,5 @@ app.use("/blogs", blogRoutes);
 app.use((req, res) => {
   res.status(404).render("404", { title: "404" });
 });
+
+module.exports = app;
